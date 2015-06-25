@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if posts %}
+        {% for post in posts %}
+            <div class="post">
+                <div class="title">
+                    {{ post.title }}
+                </div>
+                <div class="body">
+                    {{ post.body }}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        No posts yet!
+    {% endif %}
+
+    <a href="{{ url_for('create_post') }}">Create new post</a>
+
+{% endblock %}
